@@ -1,4 +1,4 @@
-# PubMed Search Tool for OpenWebUI
+# Pubmed_research: PubMed Literature Search Tool for OpenWebUI
 
 ## Overview
 This project implements a PubMed literature search tool (plugin) for OpenWebUI that enables LLM-driven scientific literature searches with advanced filtering capabilities.
@@ -12,7 +12,7 @@ This project implements a PubMed literature search tool (plugin) for OpenWebUI t
 
 ## Project Structure
 ```
-session_20260129_164406_e8f5692b459a/
+source/
 ├── results/
 │   └── pubmed_search_tool.py    # Main plugin file for OpenWebUI
 ├── workflow/
@@ -192,4 +192,4 @@ All 7 tests pass:
 This tool is provided for research and educational purposes.
 
 ## Author
-K-Dense Scientific Computing Framework
+ZuiLuo1116 using K-Dense Scientific Computing Framework
