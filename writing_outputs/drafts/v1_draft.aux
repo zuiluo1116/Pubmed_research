@@ -1,0 +1,85 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{4}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Background and Motivation}{4}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Objectives}{4}{subsection.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Key Features}{4}{subsection.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}System Architecture}{5}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Overview}{5}{subsection.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces System architecture diagram showing the three-layer design of the OpenWebUI PubMed Search Plugin. The Tool Layer contains the main \texttt  {Tools} class with Valves configuration and helper methods for query building, API communication, XML parsing, and result formatting.}}{5}{figure.caption.2}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:architecture}{{1}{5}{System architecture diagram showing the three-layer design of the OpenWebUI PubMed Search Plugin. The Tool Layer contains the main \texttt {Tools} class with Valves configuration and helper methods for query building, API communication, XML parsing, and result formatting}{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}NCBI E-utilities API Integration}{5}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}ESearch API (esearch.fcgi)}{5}{subsubsection.2.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces ESearch API Parameters}}{5}{table.caption.3}\protected@file@percent }
+\newlabel{tab:esearch}{{1}{5}{ESearch API Parameters}{table.caption.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}EFetch API (efetch.fcgi)}{6}{subsubsection.2.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Data Flow}{6}{subsection.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Data flow diagram showing the transformation from natural language input through query construction, API calls, XML parsing, and Markdown formatting to final LLM response.}}{6}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:dataflow}{{2}{6}{Data flow diagram showing the transformation from natural language input through query construction, API calls, XML parsing, and Markdown formatting to final LLM response}{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Implementation Details}{7}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Code Structure}{7}{subsection.3.1}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}{\ignorespaces Core class structure of the PubMed Search Tool}}{7}{lstlisting.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Query Building}{7}{subsection.3.2}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}{\ignorespaces Query construction with field tags}}{7}{lstlisting.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}XML Parsing}{7}{subsection.3.3}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3}{\ignorespaces XML parsing for article extraction}}{7}{lstlisting.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Rate Limiting Implementation}{8}{subsection.3.4}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4}{\ignorespaces Rate limiting mechanism}}{8}{lstlisting.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Valves Configuration}{8}{subsection.3.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Configurable Valves Parameters}}{8}{table.caption.5}\protected@file@percent }
+\newlabel{tab:valves}{{2}{8}{Configurable Valves Parameters}{table.caption.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Installation and Configuration}{9}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Prerequisites}{9}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Installation Steps}{9}{subsection.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Step-by-step installation guide for adding the PubMed Search Tool to OpenWebUI. The process involves accessing the admin panel, creating a new tool, and configuring the Valves settings.}}{9}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:installation}{{3}{9}{Step-by-step installation guide for adding the PubMed Search Tool to OpenWebUI. The process involves accessing the admin panel, creating a new tool, and configuring the Valves settings}{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Method 1: Direct Copy (Recommended)}{9}{subsubsection.4.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Method 2: File Import}{9}{subsubsection.4.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Configuring Valves}{10}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Usage Guide}{10}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Natural Language Queries}{10}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Basic Search}{10}{subsubsection.5.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Date Filtered Search}{10}{subsubsection.5.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.3}Author Filtered Search}{11}{subsubsection.5.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.4}Journal Filtered Search}{11}{subsubsection.5.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.5}Publication Type Filter}{11}{subsubsection.5.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.6}Combined Filters}{11}{subsubsection.5.1.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Function Parameters}{11}{subsection.5.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Complete Function Parameter Reference}}{11}{table.caption.7}\protected@file@percent }
+\newlabel{tab:params}{{3}{11}{Complete Function Parameter Reference}{table.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Supported Publication Types}{12}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Output Format}{12}{subsection.5.4}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5}{\ignorespaces Example output format}}{12}{lstlisting.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Testing and Validation}{12}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Test Suite Overview}{12}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Test Results}{12}{subsection.6.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Test validation results showing 100\% success rate across all 7 test scenarios. Each test verifies a specific filtering capability or core function of the plugin.}}{13}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:testresults}{{4}{13}{Test validation results showing 100\% success rate across all 7 test scenarios. Each test verifies a specific filtering capability or core function of the plugin}{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Test Cases}{13}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.3.1}Test 1: Basic Keyword Search}{13}{subsubsection.6.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.3.2}Test 2: Date Range Filter}{13}{subsubsection.6.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.3.3}Test 3: Author Filter}{13}{subsubsection.6.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.3.4}Test 4: Journal Filter}{14}{subsubsection.6.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.3.5}Test 5: Publication Type Filter}{14}{subsubsection.6.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.3.6}Test 6: Combined Filters}{14}{subsubsection.6.3.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.3.7}Test 7: Abstract Retrieval Verification}{14}{subsubsection.6.3.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Rate Limiting Handling}{14}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Troubleshooting}{15}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Common Issues}{15}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.1}Rate Limit Errors (HTTP 429)}{15}{subsubsection.7.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.2}No Results Found}{15}{subsubsection.7.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.3}Abstract Not Available}{15}{subsubsection.7.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Network Issues}{15}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{15}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Key Achievements}{16}{subsection.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Future Enhancements}{16}{subsection.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Availability}{16}{subsection.8.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Complete Source Code}{16}{appendix.A}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B}API Endpoints Reference}{17}{appendix.B}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces NCBI E-utilities Endpoints}}{17}{table.caption.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {C}Version History}{17}{appendix.C}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Plugin Version History}}{17}{table.caption.10}\protected@file@percent }
+\gdef \@abspage@last{17}

@@ -1,0 +1,195 @@
+# PubMed Search Tool for OpenWebUI
+
+## Overview
+This project implements a PubMed literature search tool (plugin) for OpenWebUI that enables LLM-driven scientific literature searches with advanced filtering capabilities.
+
+## Features
+- **Advanced Filtering**: Search by date range, author, journal, and publication type
+- **Abstract Retrieval**: Full abstracts included in search results
+- **OpenWebUI Compatible**: Implemented as a Tool (function calling) for seamless LLM integration
+- **Formatted Output**: Results in Markdown format for optimal LLM consumption
+- **Rate Limiting**: Built-in rate limiting to comply with NCBI API guidelines
+
+## Project Structure
+```
+session_20260129_164406_e8f5692b459a/
+├── results/
+│   └── pubmed_search_tool.py    # Main plugin file for OpenWebUI
+├── workflow/
+│   └── test_pubmed_tool.py      # Test suite
+├── implementation_plan.md        # Implementation plan
+├── implementation_plan.json      # Machine-readable plan
+├── manifest.json                 # File manifest
+└── README.md                     # This file
+```
+
+## Installation in OpenWebUI
+
+### Method 1: Direct Copy
+1. Open OpenWebUI Admin Panel
+2. Navigate to **Workspace** > **Tools**
+3. Click **Create New Tool** (+)
+4. Copy the entire contents of `results/pubmed_search_tool.py`
+5. Paste into the tool editor
+6. Click **Save**
+
+### Method 2: Import
+1. Download `results/pubmed_search_tool.py`
+2. In OpenWebUI, go to **Workspace** > **Tools**
+3. Click **Import** and select the file
+
+## Configuration (Valves)
+
+The tool supports the following configuration options:
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `NCBI_API_KEY` | NCBI API key for higher rate limits (10 req/s vs 3 req/s) | Empty |
+| `NCBI_EMAIL` | Email for NCBI API identification (recommended) | Empty |
+| `MAX_RESULTS` | Default maximum results per search | 10 |
+
+### Getting an NCBI API Key (Optional but Recommended)
+1. Go to https://www.ncbi.nlm.nih.gov/account/
+2. Create an NCBI account or sign in
+3. Go to Settings > API Key Management
+4. Generate a new API key
+5. Enter the key in the tool's Valves configuration
+
+## Usage Examples
+
+### Basic Search
+```
+Search PubMed for "machine learning cancer diagnosis"
+```
+
+### With Date Filter
+```
+Find recent papers on COVID-19 vaccines published in 2024
+```
+
+### With Author Filter
+```
+Search for CRISPR papers by Jennifer Doudna
+```
+
+### With Journal Filter
+```
+Find immunotherapy articles published in Nature
+```
+
+### With Publication Type
+```
+Search for systematic reviews on diabetes treatment
+```
+
+### Combined Filters
+```
+Find review articles on Alzheimer's disease in Lancet from 2023 onwards
+```
+
+## Function Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `query` | string | Yes | Main search terms |
+| `max_results` | int | No | Maximum results (1-100, default: 10) |
+| `author` | string | No | Author name filter |
+| `journal` | string | No | Journal name/abbreviation |
+| `date_from` | string | No | Start date (YYYY or YYYY/MM/DD) |
+| `date_to` | string | No | End date (YYYY or YYYY/MM/DD) |
+| `publication_type` | string | No | Publication type filter |
+
+### Supported Publication Types
+- Review
+- Clinical Trial
+- Meta-Analysis
+- Randomized Controlled Trial
+- Case Report
+- Systematic Review
+- Letter
+- Editorial
+
+## Output Format
+
+Results are returned in Markdown format:
+
+```markdown
+## PubMed Search Results
+
+**Query**: [search query]
+**Results Found**: [count] articles
+**Retrieved**: [timestamp]
+
+---
+
+### 1. [Article Title]
+
+**Authors**: [Author list]
+**Journal**: [Journal name] ([Publication date])
+**PMID**: [PMID with link] | **DOI**: [DOI]
+
+**Abstract**:
+[Full abstract text]
+
+---
+```
+
+## Technical Details
+
+### API Used
+- NCBI E-utilities API
+- Endpoints:
+  - `esearch.fcgi` - Search and retrieve PMIDs
+  - `efetch.fcgi` - Fetch detailed article information
+
+### Rate Limiting
+- Without API key: 3 requests/second
+- With API key: 10 requests/second
+- Built-in rate limiting with 340ms minimum interval between requests
+
+### Dependencies
+- `requests` - HTTP requests
+- `pydantic` - Data validation and settings
+- Python standard library: `xml.etree.ElementTree`, `time`, `datetime`
+
+## Testing
+
+Run the test suite:
+```bash
+python3 workflow/test_pubmed_tool.py
+```
+
+All 7 tests pass:
+1. Basic Keyword Search
+2. Date Range Filter
+3. Author Filter
+4. Journal Filter
+5. Publication Type Filter
+6. Combined Filters
+7. Abstract Retrieval Verification
+
+## Troubleshooting
+
+### Rate Limit Errors (429)
+- Add an NCBI API key in the tool configuration
+- Reduce request frequency
+
+### No Results Found
+- Try broader search terms
+- Check filter spelling (especially author names and journals)
+- Remove some filters to expand search
+
+### Abstract Not Available
+- Some articles don't have abstracts in PubMed
+- The tool will display "No abstract available"
+
+## Version Information
+- Version: 1.0.0
+- Python: 3.12+
+- Date: 2026-01-29
+
+## License
+This tool is provided for research and educational purposes.
+
+## Author
+K-Dense Scientific Computing Framework
