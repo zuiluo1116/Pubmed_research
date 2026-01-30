@@ -5,7 +5,7 @@ This tool enables LLM-driven literature searches on PubMed with advanced filteri
 It uses NCBI E-utilities API (esearch + efetch) to search and retrieve article data
 including abstracts.
 
-Author: K-Dense
+Author: ZuiLuo1116 using K-Dense Framework
 Version: 1.0.0
 """
 
